@@ -1,18 +1,17 @@
 Channels :
-channals is the data container which  consists of similer infromation. 
- ex : In RGB image red , green and blue are the channels where red 
-      channel connsists of the information related to red
+   Channels can be considered as container which  consists of information of the objects , for an image channels consists of edge , textures and other attritbutes of an object.A channel of an image can be divide into numbers channels which consists of all the attributes of an object in an image.
 
-kernal :
-kernal is the 3x3 matrix which will extractor of features of the image.
+Kernel :
+   They are called as filters , feature extractors where we extract the prominent features from an image . The kernel consists of values which can we used to extract the information by performing  matrix multiplication with the orginal image  
 
 Why should we only (well mostly) use 3x3 Kernels?
-Using 3x3 kernels or an odd shaped kernels is because of the symmetry , since odd dimensioned kernels have a anchor points it has 
-pixels surroudning it along with the center pixel point due to which matrix multiplicaiton is feasible . In odd dimesioned 
-kernel 3x3 is perffered to other dimensions like 5x5,7x7 is because of the computation time taken. 
 
-Even dimensioned like 2x2,4x4 are not considered is due their asymmetry property during matrix multiplication causes aliasing
-errors or loss of pixel information.
+     Using 3x3 kernels or an odd shaped kernels is because of the symmetry , since odd dimensioned kernels have a anchor      points it has 
+     pixels surroudning it along with the center pixel point due to which matrix multiplicaiton is feasible . In odd dimesioned 
+     kernel 3x3 is perffered to other dimensions like 5x5,7x7 is because of the computation time taken. 
+
+     Even dimensioned like 2x2,4x4 are not considered is due their asymmetry property during matrix multiplication causes aliasing
+     errors or loss of pixel information.
 
 How many times do we need to perform 3x3 convolution operation to reach 1x1 
 
