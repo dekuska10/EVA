@@ -1,0 +1,51 @@
+
+How many layers: The number of layer depends on the architecture we are yet to design  and the embedded hardware 
+
+MaxPooling: It is one of the layer operation in CNN architecture which is used to reduce the feature map size which in turn reduces the computation and increases the receptive field 
+
+1x1 Convolutions: This operation is used to change the dimensionality of the channel either to increase or decrease, which inturn reduces the computaion. This is also termed as network in network 
+
+3x3 Convolutions: It can be termed as the convolution matrix or a kernel which is used to extract the features from an image 
+
+Receptive Field:The receptive field can be briefly defined as the region in the input space that a particular CNN’s feature is looking at 
+
+SoftMax:The softmax function is ideally used in the output layer of the classifier where we are actually trying to attain the probabilities to define the class of each input.
+
+Learning Rate: It is an hyperparameter used during training of the network ,it is a decreasing function of time. It defines at what rate the architecture should learn based on the estimated error of the weights 
+
+Kernels and how do we decide the number of kernels? Kernel can also be termed as filters which are a small matrix which is used to perform convolution on the whole image , the architect decides the number of kernels in the layer but the values of the kernel are decided by the computation of gradients 
+
+Batch Normalization: It normalizes the input layer by adjusting and scaling the activations of each hidden layer . It avoids overfitting problem . BN helps to use higher learning rates since no activations can go high or low 
+
+Image Normalization: This is to normalize the data in the range from 0-1, this is a kind of operation performed , this is a preprocessing step in the training y we perform this is because in our training we are goign to multiply the weights and adding biases with the inputs which cause the graidents during backpropogation 
+
+Position of MaxPooling: Max pooling are not used in the intial layers of the architecute since the function of maxpool is to reduce the size of the channel which cause filtering of prominent features , in the intial layers we require the network to learn max information 
+
+Concept of Transition Layers: A transition layer is made of Batch normalization , 1x1 convolution and average pooling 
+
+Position of Transitin Layer:The transition layers placed after the convolution  to reduce the no of channels and other parameters and it is avoided in the begining 3 layers and  before the final convolution layer.
+
+Number of Epochs and when to increase them: Number of epochs is a hyperparameter which is used during training , it means that each sample in the training set had the opportunity to update the internal model parameters. This epoch value is set by architect
+
+DropOut:Dropout is a regularization technique for neural network models ,it  is a technique where randomly selected neurons are ignored during training. It reduces the gap between validation acc and train acc
+
+When do we introduce DropOut, or when do we know we have some overfitting: We can have dropout at any transition layer but not at the last layer of the prediction 
+
+The distance of MaxPooling from Prediction: Maxpooling should be finally used 2-3 layers befor prediction
+
+The distance of Batch Normalization from Prediction: It should be used one layer before batch normalization 
+
+When do we stop convolutions and go ahead with a larger kernel or some other alternative (which we have not yet covered)
+
+How do we know our network is not going well, comparatively, very early: training the model on a single data and checking if it overfitting
+ 
+Batch Size, and effects of batch size :It refers to the number of training examples utilized in one iteration. depending on GPU bigger batch size might speed up epochs larger the batch size lesser the time for each epoch ideally batch size should be more than number of classes bigger batch size is generally better for better learning
+
+When to add validation checks: for every epochs in the training 
+
+LR schedule and concept behind it:learning rate at the intial epochs needs to be more once the training is about to complete it has to less this is handeled by the LR schedule adjust the learning rate used by the optimization algorithm. A learning rate that is too large can cause the model to converge too quickly to a suboptimal solution, whereas a learning rate that is too small can cause the process to get stuck.
+
+Adam vs SGD: these are the optimizers 
+sgd :it will not perform the computation on whole data set which is redundant and inefficient — SGD only computes on a small subset or random selection of data examples. It produces the same performance as regular gradient descent when the learning rate is low.
+
+Adam : It  is an algorithm for gradient-based optimization of stochastic objective functions. *It combines the advantages of two SGD extensions — Root Mean Square Propagation (RMSProp) and Adaptive Gradient Algorit (AdaGrad) — and computes individual adaptive learning rates for different parameters. 
